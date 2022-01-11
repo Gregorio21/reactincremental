@@ -1,0 +1,19 @@
+﻿.item {
+    grid-row: 1;
+    background-color: #388e3c !important;
+    color: white !important;
+}
+
+.item2 {
+    grid-row: 2;
+    background-color: #388e3c !important;
+    color: white !important;
+}
+
+.rows {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 5vh 5vh;
+    grid-gap: 2vh;
+    margin-bottom: 2vh;
+}
