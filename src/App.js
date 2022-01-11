@@ -4,8 +4,8 @@ import { Button, Badge, ThemeProvider } from '@material-ui/core';
 import { withStyles } from "@material-ui/core";
 import ButtonIncremenet from './ButtonIncrement'
 import SwitchIncrement from './SwitchIncrement';
-import { green, blue, red } from '@mui/material/colors';
-import { createTheme } from '@mui/material/styles';
+import { green, blue, red } from '@material-ui/core/colors';
+import { createTheme } from '@material-ui/core';
 import Upgrades from './Upgrades';
 
 const theme = createTheme({
