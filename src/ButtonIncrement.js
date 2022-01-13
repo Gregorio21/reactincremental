@@ -11,8 +11,9 @@ class ButtonIncrement extends Component {
 
 
     render() {
+        const colors = ['blue','green'];
         return (           
-            <Button variant="contained" color="primary" onClick={() => this.props.onClick()} className="Increment"> {this.props.value[0]} </Button>
+            <Button variant="contained" color="primary" onClick={() => this.props.onClick()} className={this.props.className}> {this.props.value[0]} {colors[this.props.tier]} </Button>
         );
     }
 }
