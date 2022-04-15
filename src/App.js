@@ -37,6 +37,7 @@ class App extends Component {
             defaultButtonState: [0, 3, 300, 300],
             tier: 0,
             tierCost: 3000,
+            tierPoints: 0,
 
         };
     }
@@ -65,7 +66,7 @@ class App extends Component {
     updateButtonTick(x) { 
         const buttonState = this.state.buttonState;
         if (buttonState[0] > buttonState[3] && buttonState[2] > 0) {
-            buttonState[2] += x;
+            buttonState[2] *= x;
             buttonState[0] -= buttonState[3];
             buttonState[3] *= 2;
             this.setState({ button: buttonState });
@@ -82,7 +83,7 @@ class App extends Component {
             this.setState({ tier: tier + 1 });
             clearInterval(this.interval);
             this.interval = setInterval(() => this.updateButtonValue(buttonState), this.state.buttonState[2]);
-            this.setState({ buttonState: defaultButton });
+            this.setState({ buttonState: defaultButton.slice(0) });
             this.setState({ tierCost: parseInt(tierCost*2.25) })
         }
         
@@ -90,7 +91,7 @@ class App extends Component {
 
     getTab(i) {
         var tabs = [<ButtonIncremenet tier={0} className="Increment" onClick={() => this.updateButtonValue(this.state.buttonState)} value={this.state.buttonState}> </ButtonIncremenet>,           
-            <Upgrades tierCost={this.state.tierCost} costButton={this.state.buttonState[3]} onClick1={() => this.updateButtonIncrement(3)} onClick2={() => this.updateButtonTick(-60)} onClick3={() => this.tierUp()} tier={this.state.tier}></Upgrades>
+            <Upgrades tierCost={this.state.tierCost} costButton={this.state.buttonState[3]} onClick1={() => this.updateButtonIncrement(3)} onClick2={() => this.updateButtonTick(0.8)} onClick3={() => this.tierUp()} tier={this.state.tier}></Upgrades>
         ];
         return tabs[i];
     }

@@ -15,7 +15,7 @@ class Upgrades extends Component {
 
                 <Button variant="contained" onClick={() => this.props.onClick3()} className='upgradeTier1'> Tier Up to: {this.props.tier + 1} cost: {this.props.tierCost} </Button>
                 <Button variant="contained" onClick={() => this.props.onClick1()} className='upgradeTier1'> Upgrade Button Value Per Tick + 3 cost: {this.props.costButton} </Button>
-                <Button variant="contained" onClick={() => this.props.onClick2()} className='upgradeTier1'> Upgrade Button Tick Speed + 60ms cost: {this.props.costButton} </Button>                  
+                <Button variant="contained" onClick={() => this.props.onClick2()} className='upgradeTier1'> Upgrade Button Tick Speed by +20% cost: {this.props.costButton} </Button>                  
                 
             </Fragment>
         );
