@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { Button } from '@material-ui/core';
+import { Button, Tooltip } from '@material-ui/core';
 
 class ButtonIncrement extends Component {
     constructor(props) {
@@ -13,7 +13,9 @@ class ButtonIncrement extends Component {
     render() {
         const colors = ['blue','green'];
         return (           
-            <Button variant="contained" color="primary" onClick={() => this.props.onClick()} className={this.props.className}> {this.props.value[0]} {colors[this.props.tier]} </Button>
+            <Tooltip title="Click Here" arrow>
+                <Button variant="contained" color="primary" onClick={() => this.props.onClick()} className={this.props.className}> {this.props.value[1]} points per click </Button>
+            </Tooltip>
         );
     }
 }
